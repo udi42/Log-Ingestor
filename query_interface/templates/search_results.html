@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        h2 {
+            background-color: #333;
+            color: #fff;
+            padding: 1em;
+            text-align: center;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin: 10px;
+            padding: 20px;
+            border-radius: 8px;
+            transition: transform 0.2s ease-in-out;
+        }
+
+        li h3 {
+            color: #333;
+        }
+
+        li p {
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <h2>Search Results</h2>
+    <ul>
+        {% for result in results %}
+            <li>
+                <h3>{{ result['level'] }}</h3>
+                <p><strong>Message:</strong> {{ result['message'] }}</p>
+                <p><strong>Resource ID:</strong> {{ result['resourceId'] }}</p>
+                <p><strong>Timestamp:</strong> {{ result['timestamp'] }}</p>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
